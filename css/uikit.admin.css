@@ -21,6 +21,7 @@ body {
     right: 0;
     top: 0;
     z-index: 1104;
+    transition: all .6s;
 }
 .admin-head .uk-float-left,.admin-head .uk-float-right>ul>li>a{
     line-height: 40px;
@@ -69,8 +70,10 @@ body {
     width:200px;
     left: 0;
     top: 0;
-    z-index: 1104;
     border-right: 1px solid rgba(0,0,0,.12);
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: all .6s;
 }
 .admin-side>ul{
     width: 170px;
@@ -83,7 +86,7 @@ body {
 .admin-body{
     padding: 24px 24px 100px;
     margin-left: 200px;
-
+    transition: all .6s;
 }
 .uk-card{
     background: #fff;

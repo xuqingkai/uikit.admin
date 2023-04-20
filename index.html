@@ -11,11 +11,11 @@
     <script src="./js/uikit.admin.js"></script>
 
 </head>
-<body>
-    <div class="admin-head">
+<body id="app">
+    <div class="admin-head" :style="{left:sideWidth+'px'}">
         <div class="uk-float-left">
-            <a href="javascript:void(0);" class="admin-side-toggle admin-side-toggle-show" >
-                <span uk-icon="icon:arrow-left;ratio:1.5"></span>
+            <a href="javascript:void(0);" class="admin-side-toggle" :class="toggleClassName" @click="side_toggle">
+                <span data-uk-icon="icon:arrow-left;ratio:1.5"></span>
             </a>
         </div>
         <div class="uk-float-left">
@@ -29,8 +29,8 @@
             <ul class="uk-navbar-nav">
                 <li class="uk-visible@s"><a href="">帮助中心</a></li>
                 <li>
-                    <a href=""><img src="./avatar.png" style="height: 24px;" class="uk-border-circle uk-visible@s" alt="" />管理员<span uk-icon="icon:triangle-down;"></span></a>
-                    <div uk-dropdown>
+                    <a href=""><img src="./avatar.png" style="height: 24px;" class="uk-border-circle uk-visible@s" alt="" />管理员<span data-uk-icon="icon:triangle-down;"></span></a>
+                    <div data-uk-dropdown>
                         <ul class="uk-nav uk-dropdown-nav">
                             <li class="uk-active"><a href="#">Active</a></li>
                             <li><a href="#">Item</a></li>
@@ -47,11 +47,10 @@
     </div>
     
     
-    
-    <div class="admin-side uk-height-1-1 uk-overflow-auto">
+    <div class="admin-side uk-height-1-1" :style="{left:(sideWidth-200)+'px'}">
         <ul class="uk-list uk-margin-remove-bottom admin-logo">
             <li>
-                <div class="uk-grid-small" uk-grid>
+                <div class="uk-grid-small" data-uk-grid>
                     <div class="uk-width-auto">
                         <img class="uk-comment-avatar uk-border-circle" src="./avatar.png" width="50" height="50" alt="">
                     </div>
@@ -65,7 +64,7 @@
         <ul class="uk-nav-default uk-padding-small" uk-nav="multiple: true">
             <li class="uk-active"><a href="#">管理后台</a></li>
             <li class="uk-parent">
-                <a href="#">老年人查体 <span uk-nav-parent-icon></span></a>
+                <a href="#">老年人查体 <span data-uk-nav-parent-icon></span></a>
                 <ul class="uk-nav-sub">
                     <li><a href="#">登记</a></li>
                     <li><a href="#">身高体重</a></li>
@@ -82,7 +81,7 @@
                 </ul>
             </li>
             <li class="uk-parent">
-                <a href="#">学生查体 <span uk-nav-parent-icon></span></a>
+                <a href="#">学生查体 <span data-uk-nav-parent-icon></span></a>
                 <ul class="uk-nav-sub">
                     <li><a href="#">Sub item</a></li>
                     <li><a href="#">Sub item</a></li>
@@ -116,7 +115,7 @@
     </div>
     
     
-    <div class="admin-body uk-padding">
+    <div class="admin-body uk-padding" :style="{marginLeft:sideWidth+'px'}">
         <div class="uk-flex uk-flex-between uk-flex-wrap">
             <div class="uk-card uk-card-default uk-padding-small uk-width-1-6@s">
                 <h3 class="uk-card-title">Default</h3>
@@ -136,5 +135,30 @@
             </div>
         </div>
     </div> 
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        const { createApp } = Vue
+        
+        createApp({
+            data() {
+                return {
+                    sideWidth:200,
+                }
+            },
+            methods: {
+                side_toggle() {
+                    if(this.sideWidth>0){
+                        this.toggleClassName="admin-side-toggle-hide";
+                        this.sideWidth=0;
+                    }else{
+                        this.toggleClassName="admin-side-toggle-show";
+                        this.sideWidth=200;
+                    }
+                }
+            }
+        }).mount('#app');
+      </script>
+
 </body>
 </html>
