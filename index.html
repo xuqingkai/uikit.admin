@@ -14,7 +14,7 @@
 <body id="app">
     <div class="admin-head" :style="{left:sideWidth+'px'}">
         <div class="uk-float-left">
-            <a href="javascript:void(0);" class="admin-side-toggle" :class="toggleClassName" @click="side_toggle">
+            <a href="javascript:void(0);" class="admin-side-toggle" :class="toggleClassName" @click="sideToggle">
                 <span data-uk-icon="icon:arrow-left;ratio:1.5"></span>
             </a>
         </div>
@@ -147,7 +147,7 @@
                 }
             },
             methods: {
-                side_toggle() {
+                sideToggle() {
                     if(this.sideWidth>0){
                         this.toggleClassName="admin-side-toggle-hide";
                         this.sideWidth=0;
@@ -156,6 +156,12 @@
                         this.sideWidth=200;
                     }
                 }
+            },
+            mounted() {
+                if(window.navigator.userAgent.indexOf('Android')>0 || window.navigator.userAgent.indexOf('iOS')>0 || window.navigator.userAgent.indexOf('iPad')>0){
+                    this.sideToggle();
+                }
+                
             }
         }).mount('#app');
       </script>
