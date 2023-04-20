@@ -7,88 +7,112 @@
     <link href="./css/uikit.css" rel="stylesheet">
     <link href="./css/uikit.admin.css" rel="stylesheet">
     <script src="./js/uikit.js"></script>
-    <script src="./js/uikit.icons.js"></script>
+    <script src="./js/uikit-icons.js"></script>
     <script src="./js/uikit.admin.js"></script>
 
 </head>
-<body class="uk-height-1-1">
+<body>
     <div class="admin-head">
-        <nav class="uk-navbar-container uk-navbar-transparent" uk-navbar>
-            <div class="uk-navbar-left">
-                <ul class="uk-navbar-nav">
-                    <li class="uk-active"><a href="javascript:void(0);" class="admin-side-toggle"><span uk-icon="icon:arrow-left;ratio:1.8"></span></a></li>
-                    <li><a href="#">Parent <span uk-navbar-parent-icon></span></a></li>
-                    <li><a href="#">Item</a></li>
-                </ul>
-            </div>
-            <div class="uk-navbar-right">
-                <ul class="uk-navbar-nav">
-                    <li>
-                        <a href="#">Parent <span uk-navbar-parent-icon></span></a>
-                        <div class="uk-navbar-dropdown">
-                            <ul class="uk-nav uk-navbar-dropdown-nav">
-                                <li class="uk-active"><a href="#">Active</a></li>
-                                <li><a href="#">Item</a></li>
-                                <li class="uk-nav-header">Header</li>
-                                <li><a href="#">Item</a></li>
-                                <li><a href="#">Item</a></li>
-                                <li class="uk-nav-divider"></li>
-                                <li><a href="#">Item</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+        <div class="uk-float-left">
+            <a href="javascript:void(0);" class="admin-side-toggle admin-side-toggle-show" >
+                <span uk-icon="icon:arrow-left;ratio:1.5"></span>
+            </a>
+        </div>
+        <div class="uk-float-left">
+            <ul class="uk-breadcrumb">
+                <li><a href="#">控制台</a></li>
+                <li><a href="#">用户</a></li>
+                <li><span>添加</span></li>
+            </ul>
+        </div>
+        <div class="uk-float-right"> 
+            <ul class="uk-navbar-nav">
+                <li class="uk-visible@s"><a href="">帮助中心</a></li>
+                <li>
+                    <a href=""><img src="./avatar.png" style="height: 24px;" class="uk-border-circle uk-visible@s" alt="" />管理员<span uk-icon="icon:triangle-down;"></span></a>
+                    <div uk-dropdown>
+                        <ul class="uk-nav uk-dropdown-nav">
+                            <li class="uk-active"><a href="#">Active</a></li>
+                            <li><a href="#">Item</a></li>
+                            <li class="uk-nav-header">Header</li>
+                            <li><a href="#">Item</a></li>
+                            <li><a href="#">Item</a></li>
+                            <li class="uk-nav-divider"></li>
+                            <li><a href="#">Item</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
     </div>
     
     
     
-    <div class="admin-side uk-height-1-1">
-        <a class="uk-navbar-item uk-logo uk-sticky" href="#">Logo</a>
-        <div class="uk-padding-small uk-overflow-auto" style="height:100%;">
-            <ul class="uk-nav-default" uk-nav="multiple: true">
-                <li class="uk-active"><a href="#">Active</a></li>
-                <li class="uk-parent">
-                    <a href="#">Parent <span uk-nav-parent-icon></span></a>
-                    <ul class="uk-nav-sub">
-                        <li><a href="#">Sub item</a></li>
-                        <li><a href="#">Sub item</a></li>
-                    </ul>
-                </li>
-                <li class="uk-parent">
-                    <a href="#">Parent <span uk-nav-parent-icon></span></a>
-                    <ul class="uk-nav-sub">
-                        <li><a href="#">Sub item</a></li>
-                        <li><a href="#">Sub item</a></li>
-                        <li><a href="#">Sub item</a></li>
-                        <li><a href="#">Sub item</a></li>
-                        <li><a href="#">Sub item</a></li>
-                        <li><a href="#">Sub item</a></li>
-                        <li><a href="#">Sub item</a></li>
-                        <li><a href="#">Sub item</a></li>
-                        <li><a href="#">Sub item</a></li>
-                        <li><a href="#">Sub item</a></li>
-                        <li><a href="#">Sub item</a></li>
-                        <li><a href="#">Sub item</a></li>
-                        <li><a href="#">Sub item</a></li>
-                        <li><a href="#">Sub item</a></li>
-                        <li><a href="#">Sub item</a></li>
-                        <li><a href="#">Sub item</a></li>
-                        <li><a href="#">Sub item10</a></li>
-                        <li><a href="#">Sub item9</a></li>
-                        <li><a href="#">Sub item8</a></li>
-                        <li><a href="#">Sub item7</a></li>
-                        <li><a href="#">Sub item6</a></li>
-                        <li><a href="#">Sub item5</a></li>
-                        <li><a href="#">Sub item4</a></li>
-                        <li><a href="#">Sub item3</a></li>
-                        <li><a href="#">Sub item2</a></li>
-                        <li><a href="#">Sub item1</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
+    <div class="admin-side uk-height-1-1 uk-overflow-auto">
+        <ul class="uk-list uk-margin-remove-bottom admin-logo">
+            <li>
+                <div class="uk-grid-small" uk-grid>
+                    <div class="uk-width-auto">
+                        <img class="uk-comment-avatar uk-border-circle" src="./avatar.png" width="50" height="50" alt="">
+                    </div>
+                    <div class="uk-width-expand">
+                        <h4 class="uk-comment-title uk-margin-remove"><a class="uk-link-reset" href="#">管理员</a></h4>
+                        <p class="uk-comment-meta uk-margin-remove-top"><a class="uk-link-reset" href="#">公卫科</a></p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <ul class="uk-nav-default uk-padding-small" uk-nav="multiple: true">
+            <li class="uk-active"><a href="#">管理后台</a></li>
+            <li class="uk-parent">
+                <a href="#">老年人查体 <span uk-nav-parent-icon></span></a>
+                <ul class="uk-nav-sub">
+                    <li><a href="#">登记</a></li>
+                    <li><a href="#">身高体重</a></li>
+                    <li><a href="#">血压脉率</a></li>
+                    <li><a href="#">全科问诊</a></li>
+                    <li><a href="#">中医辨识</a></li>
+                    <li><a href="#">自理评估</a></li>
+                    <li><a href="#">随访</a></li>
+                    <li><a href="#">Sub item</a></li>
+                    <li><a href="#">Sub item</a></li>
+                    <li><a href="#">Sub item</a></li>
+                    <li><a href="#">Sub item</a></li>
+                    <li><a href="#">Sub item</a></li>
+                </ul>
+            </li>
+            <li class="uk-parent">
+                <a href="#">学生查体 <span uk-nav-parent-icon></span></a>
+                <ul class="uk-nav-sub">
+                    <li><a href="#">Sub item</a></li>
+                    <li><a href="#">Sub item</a></li>
+                    <li><a href="#">Sub item</a></li>
+                    <li><a href="#">Sub item</a></li>
+                    <li><a href="#">Sub item</a></li>
+                    <li><a href="#">Sub item</a></li>
+                    <li><a href="#">Sub item</a></li>
+                    <li><a href="#">Sub item</a></li>
+                    <li><a href="#">Sub item</a></li>
+                    <li><a href="#">Sub item</a></li>
+                    <li><a href="#">Sub item</a></li>
+                    <li><a href="#">Sub item</a></li>
+                    <li><a href="#">Sub item</a></li>
+                    <li><a href="#">Sub item</a></li>
+                    <li><a href="#">Sub item</a></li>
+                    <li><a href="#">Sub item</a></li>
+                    <li><a href="#">Sub item10</a></li>
+                    <li><a href="#">Sub item9</a></li>
+                    <li><a href="#">Sub item8</a></li>
+                    <li><a href="#">Sub item7</a></li>
+                    <li><a href="#">Sub item6</a></li>
+                    <li><a href="#">Sub item5</a></li>
+                    <li><a href="#">Sub item4</a></li>
+                    <li><a href="#">Sub item3</a></li>
+                    <li><a href="#">Sub item2</a></li>
+                    <li><a href="#">Sub item1</a></li>
+                </ul>
+            </li>
+        </ul>
     </div>
     
     
@@ -111,8 +135,6 @@
                 <p>Lorem ipsum <a href="#">dolor</a> sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             </div>
         </div>
-        
     </div> 
-
 </body>
 </html>

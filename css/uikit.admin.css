@@ -21,34 +21,62 @@ body {
     right: 0;
     top: 0;
     z-index: 1104;
-    
 }
-a.admin-side-toggle{
-    color:#fff;
+.admin-head .uk-float-left,.admin-head .uk-float-right>ul>li>a{
+    line-height: 40px;
 }
-.admin-side-toggle:before {
+.admin-head .uk-float-left a.admin-side-toggle{
+    color:#eee;
+    margin-right: 16px;
+}
+.admin-head .uk-float-left .admin-side-toggle:before {
     content: '';
     position: absolute;
-    top: 8px;
+    top: 12px;
     width: 2px;
-    height: 18px;
+    height: 16px;
     background: #fff;
-    display: block;
     opacity: 1;
     transition: opacity 280ms cubic-bezier(.4,0,.2,1);
 }
+.admin-head .uk-float-left a.admin-side-toggle span{
+    transition: all .6s
+}
+.admin-head .uk-float-left a.admin-side-toggle-show span{
+    transform: rotate(0);
+}
+.admin-head .uk-float-left a.admin-side-toggle-hide span{
+    transform: rotate(-180deg);
+}
+.admin-head .uk-float-left .uk-breadcrumb > * > *,.admin-head .uk-float-left .uk-breadcrumb > :last-child > span,.admin-head .uk-float-left .uk-breadcrumb > :last-child > a:not([href]) {
+    color: #eee;
+}
+.admin-head .uk-float-left .uk-breadcrumb > * > :hover {
+    color: #fff;
+}
+.admin-head .uk-float-left .uk-breadcrumb > :nth-child(n+2):not(.uk-first-column)::before {
+    margin: 0 10px 0 calc(10px - 4px);
+}
+
+.admin-head .uk-float-right .uk-navbar-nav > li > a,.admin-head .uk-float-right .uk-navbar-item,.admin-head .uk-float-right .uk-navbar-toggle {
+    min-height: 0;
+    color: #eee;
+}
+
 .admin-side{
     background: #fff;
     position: fixed;
     width:200px;
-    height: 100%;
     left: 0;
     top: 0;
     z-index: 1104;
-    
     border-right: 1px solid rgba(0,0,0,.12);
 }
-.uk-logo{
+.admin-side>ul{
+    width: 170px;
+}
+.admin-side .admin-logo{
+    padding: 15px;
     background: #f6f6f6;
     border-bottom: 1px solid rgba(0,0,0,.12);
 }
